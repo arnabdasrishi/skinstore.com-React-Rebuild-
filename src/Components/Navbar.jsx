@@ -1,6 +1,7 @@
 import { InputGroup, Stack, InputRightElement, Input } from "@chakra-ui/react";
 import { Search2Icon } from "@chakra-ui/icons";
 import React from "react";
+import "../index.css"
 
 const Navbar = () => {
   return (
@@ -84,24 +85,23 @@ const Navbar = () => {
         className="categories-option-dropdown"
         style={{
           display: "flex",
-          gap: "2rem",
+          gap: "1rem",
           justifyContent: "center",
-          padding: "10px",
         }}
       >
-        <p>Brands</p>
-        <p>Holiday</p>
-        <p>Sale</p>
-        <p>SkinCare</p>
-        <p>Hair</p>
-        <p>Makeup</p>
-        <p>Bath&Body</p>
-        <p>Fragnace</p>
-        <p>Self-Care</p>
-        <p>Tools</p>
-        <p>New&Trending</p>
-        <p>Build a Routine</p>
-        <p>Blog</p>
+        <p style={{padding:"10px"}}>Brands</p>
+        <p style={{padding:"10px"}}>Holiday</p>
+        <p style={{padding:"10px"}}>Sale</p>
+        <p style={{padding:"10px"}}>SkinCare</p>
+        <p style={{padding:"10px"}}>Hair</p>
+        <p style={{padding:"10px"}}>Makeup</p>
+        <p style={{padding:"10px"}}>Bath&Body</p>
+        <p style={{padding:"10px"}}>Fragnace</p>
+        <p style={{padding:"10px"}}>Self-Care</p>
+        <p style={{padding:"10px"}}>Tools</p>
+        <p style={{padding:"10px"}}>New&Trending</p>
+        <p style={{padding:"10px"}}>Build a Routine</p>
+        <p style={{padding:"10px"}}>Blog</p>
       </div>
     </div>
   );
