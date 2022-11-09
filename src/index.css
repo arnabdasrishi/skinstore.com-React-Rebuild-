@@ -11,3 +11,35 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* category dropdown after the navbar */
+.categories-option-dropdown p:hover {
+  background-color: black;
+  color: white;
+  cursor: pointer;
+}
+
+.shop-by-category-image-response div img{
+  transition: transform 0.5s;
+}
+.shop-by-category-image-response div img:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+
+.trending-offers-image-response div{
+  transition: transform 0.5s;
+}
+.trending-offers-image-response div div:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+.what-people-are-buying-now div{
+  transition: transform 0.5s;
+}
+.what-people-are-buying-now div:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}

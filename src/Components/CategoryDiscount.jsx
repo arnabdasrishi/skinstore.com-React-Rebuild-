@@ -1,4 +1,5 @@
 import React from "react";
+import "../index.css"
 
 const CategoryDiscount = () => {
   return (
@@ -48,8 +49,8 @@ const CategoryDiscount = () => {
         </p>
       </div>
 
-      <div>
-        <h3 style={{fontSize:"21px", backgroundColor:"#2E3337", color:"white", margin:"1rem 14rem"}}><b>
+      <div className="discount-coupon-banner">
+        <h3 style={{fontSize:"21px", backgroundColor:"#2E3337", color:"white", margin:"1rem 14rem",padding:"0.4rem",}}><b>
           25% off select brands with code SINGLES + free 13-piece Beauty Bag
           (Worth $117) @ $165 | Shop now</b>
         </h3>

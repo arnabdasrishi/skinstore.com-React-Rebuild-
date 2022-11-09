@@ -1,9 +1,12 @@
-import React from 'react';
-import Carousel from 'react-bootstrap/Carousel';
+import React from "react";
+import Carousel from "react-bootstrap/Carousel";
 
 function IndividualIntervalsExample() {
   return (
-    <Carousel  variant="dark" style={{maxWidth: "1472px", margin:"auto", marginTop:"-16px"}}>
+    <Carousel
+      variant="dark"
+      style={{ maxWidth: "1455px", margin: "auto", }}
+    >
       <Carousel.Item interval={3000}>
         <img
           className="d-block w-100"
@@ -37,7 +40,8 @@ function IndividualIntervalsExample() {
         <Carousel.Caption>
           <h3>The holiday Shop</h3>
           <p>
-            With Something for everyone on your list, reached your desination for beauties best gifts.
+            With Something for everyone on your list, reached your desination
+            for beauties best gifts.
           </p>
         </Carousel.Caption>
       </Carousel.Item>
@@ -51,7 +55,8 @@ function IndividualIntervalsExample() {
         <Carousel.Caption>
           <h3>Black Friday</h3>
           <p>
-            Signup on our black friday waitlist and be the first to know about the sale.
+            Signup on our black friday waitlist and be the first to know about
+            the sale.
           </p>
         </Carousel.Caption>
       </Carousel.Item>
