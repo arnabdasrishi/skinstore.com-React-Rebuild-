@@ -1,5 +1,6 @@
 import "./App.css";
 import IndividualIntervalsExample from "./Components/BannerSlider";
+import BelowFooter from "./Components/BelowFooter";
 import CategoryDiscount from "./Components/CategoryDiscount";
 import Footer from "./Components/Footer";
 import Navbar from "./Components/Navbar";
@@ -19,6 +20,7 @@ function App() {
       <WhatPeopleAreBuying />
       <OverTheBlog />
       <Footer />
+      <BelowFooter />
     </div>
   );
 }
