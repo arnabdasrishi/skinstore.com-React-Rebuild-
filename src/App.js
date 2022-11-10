@@ -1,24 +1,18 @@
 import "./App.css";
-import IndividualIntervalsExample from "./Components/BannerSlider";
 import BelowFooter from "./Components/BelowFooter";
-import CategoryDiscount from "./Components/CategoryDiscount";
 import Footer from "./Components/Footer";
 import Navbar from "./Components/Navbar";
-import OverTheBlog from "./Components/OverTheBlog";
-import ShopByCategory from "./Components/ShopByCategory";
-import TrendingOffers from "./Components/TrendingOffers";
-import WhatPeopleAreBuying from "./Components/WhatPeopleAreBuying";
+import CategoryDiscount from "./Components/CategoryDiscount";
+import AllRoutes from "./Routes/AllRoutes";
 
 function App() {
   return (
     <div className="App">
       <Navbar />
       <CategoryDiscount />
-      <IndividualIntervalsExample />
-      <ShopByCategory />
-      <TrendingOffers />
-      <WhatPeopleAreBuying />
-      <OverTheBlog />
+      {/* Variable Components starts here */}
+      <AllRoutes />
+      {/* Variable Components ends here  */}
       <Footer />
       <BelowFooter />
     </div>
