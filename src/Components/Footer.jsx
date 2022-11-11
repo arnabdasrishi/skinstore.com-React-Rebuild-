@@ -5,7 +5,12 @@ const Footer = () => {
   return (
     <div
       className="main-footer-component"
-      style={{ borderBottom: "1px solid", padding: "1rem" }}
+      style={{
+        borderBottom: "1px solid",
+        padding: "1rem",
+        borderTop: "1px solid",
+        marginTop: "1rem",
+      }}
     >
       <div
         className="footer-two-social-icon"

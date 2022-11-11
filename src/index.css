@@ -43,3 +43,27 @@ code {
   transform: scale(1.05);
   cursor: pointer;
 }
+
+.products-cards-resv{
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+
+.filter-brand {
+  padding: 30px;
+  width: 110%;
+}
+.filter-brand p {
+  border-bottom: 1px solid;
+}
+.filter-brand ul{
+  padding-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  align-items: flex-start;
+}
+
+.sort-by-price-chakra {
+  margin-top: 1rem;
+}
