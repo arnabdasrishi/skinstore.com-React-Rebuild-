@@ -1,0 +1,24 @@
+//Web Scrapper ParseHub
+
+Status: complete
+
+Pages: 196 collected
+
+Initialized : 2022-11-10T08:09:36
+
+Start Time : 2022-11-10T08:09:37
+
+Finished: 2022-11-10T08:47:51
+
+API Key: txwAgw60a0vC
+
+Project Token: trkQ7ZjzUr6Z
+
+Run Token: t1qk2m9XVLiN
+
+
+Hosted on : https://api.npoint.io/b9af8c430a0e728be586/data
+
+URL Syntax:  (sample url) ------ just add your params by "/"
+
+api.npoint.io/features/0/description
