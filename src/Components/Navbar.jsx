@@ -2,6 +2,7 @@ import { InputGroup, Stack, InputRightElement, Input } from "@chakra-ui/react";
 import { Search2Icon } from "@chakra-ui/icons";
 import React from "react";
 import "../index.css"
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
@@ -39,11 +40,11 @@ const Navbar = () => {
           padding: "20px",
         }}
       >
-        <img
+        <Link to="/"><img
           src="https://seeklogo.com/images/S/skinstore-logo-5281C41BD3-seeklogo.com.png"
           alt="logo"
           width={"200px"}
-        />
+        /></Link>
         <Stack>
           <InputGroup>
             <InputRightElement
@@ -92,7 +93,7 @@ const Navbar = () => {
         <p style={{padding:"10px"}}>Brands</p>
         <p style={{padding:"10px"}}>Holiday</p>
         <p style={{padding:"10px"}}>Sale</p>
-        <p style={{padding:"10px"}}>SkinCare</p>
+        <Link to="/products"><p style={{padding:"10px"}}>SkinCare</p></Link>
         <p style={{padding:"10px"}}>Hair</p>
         <p style={{padding:"10px"}}>Makeup</p>
         <p style={{padding:"10px"}}>Bath&Body</p>

@@ -67,3 +67,8 @@ code {
 .sort-by-price-chakra {
   margin-top: 1rem;
 }
+
+.products-title-price p,img,div{
+  margin-bottom: 1rem;
+  text-align: left;
+}

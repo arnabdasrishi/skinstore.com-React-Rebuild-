@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import ProductsCard from "./ProductsCard";
 import "../../index.css";
 import Pagination from "./Pagination";
+import { Link } from "react-router-dom";
 
 let page_start = 0;
 let page_end = 12;
@@ -19,9 +20,9 @@ const ProductsPage = () => {
 
   useEffect(() => {
     fetchData();
-  }, [prodData]);
+  }, [page]);
 
-  // console.log(prodData);
+  console.log(prodData);
   // handling the pagination and its functions
 
   function handlePrev(){
@@ -79,64 +80,64 @@ const ProductsPage = () => {
               <b>Brand</b>
             </p>
             <ul>
-              <Checkbox colorScheme="green" defaultChecked>
+              <Checkbox colorScheme="green">
                 111 Skin
               </Checkbox>
-              <Checkbox colorScheme="green" defaultChecked>
+              <Checkbox colorScheme="green">
                 Act + Acre
               </Checkbox>
-              <Checkbox colorScheme="green" defaultChecked>
+              <Checkbox colorScheme="green">
                 Aesop
               </Checkbox>
-              <Checkbox colorScheme="green" defaultChecked>
+              <Checkbox colorScheme="green">
                 AHAVA
               </Checkbox>
-              <Checkbox colorScheme="green" defaultChecked>
+              <Checkbox colorScheme="green">
                 Alchimie Forever
               </Checkbox>
-              <Checkbox colorScheme="green" defaultChecked>
+              <Checkbox colorScheme="green">
                 Algenist
               </Checkbox>
-              <Checkbox colorScheme="green" defaultChecked>
+              <Checkbox colorScheme="green">
                 Alo
               </Checkbox>
-              <Checkbox colorScheme="green" defaultChecked>
+              <Checkbox colorScheme="green">
                 Alpha-H
               </Checkbox>
-              <Checkbox colorScheme="green" defaultChecked>
+              <Checkbox colorScheme="green">
                 Alterna
               </Checkbox>
-              <Checkbox colorScheme="green" defaultChecked>
+              <Checkbox colorScheme="green">
                 Alurx
               </Checkbox>
-              <Checkbox colorScheme="green" defaultChecked>
+              <Checkbox colorScheme="green">
                 Ameliorate
               </Checkbox>
-              <Checkbox colorScheme="green" defaultChecked>
+              <Checkbox colorScheme="green">
                 Angela Caglia
               </Checkbox>
-              <Checkbox colorScheme="green" defaultChecked>
+              <Checkbox colorScheme="green">
                 Anna Sui
               </Checkbox>
-              <Checkbox colorScheme="green" defaultChecked>
+              <Checkbox colorScheme="green">
                 APIVITA
               </Checkbox>
-              <Checkbox colorScheme="green" defaultChecked>
+              <Checkbox colorScheme="green">
                 ARCONA
               </Checkbox>
-              <Checkbox colorScheme="green" defaultChecked>
+              <Checkbox colorScheme="green">
                 Aromatherapy Associates
               </Checkbox>
-              <Checkbox colorScheme="green" defaultChecked>
+              <Checkbox colorScheme="green">
                 Arquiste Parfumeur
               </Checkbox>
-              <Checkbox colorScheme="green" defaultChecked>
+              <Checkbox colorScheme="green">
                 Aurelia London
               </Checkbox>
-              <Checkbox colorScheme="green" defaultChecked>
+              <Checkbox colorScheme="green">
                 Avant Skincare
               </Checkbox>
-              <Checkbox colorScheme="green" defaultChecked>
+              <Checkbox colorScheme="green">
                 Avene
               </Checkbox>
             </ul>
@@ -147,46 +148,46 @@ const ProductsPage = () => {
               <b>SkinCare Product Type</b>
             </p>
             <ul>
-              <Checkbox colorScheme="green" defaultChecked>
+              <Checkbox colorScheme="green">
                 111 Skin
               </Checkbox>
-              <Checkbox colorScheme="green" defaultChecked>
+              <Checkbox colorScheme="green">
                 Moisturisers (860)
               </Checkbox>
-              <Checkbox colorScheme="green" defaultChecked>
+              <Checkbox colorScheme="green">
                 Serums (808)
               </Checkbox>
-              <Checkbox colorScheme="green" defaultChecked>
+              <Checkbox colorScheme="green">
                 Cleansers (581)
               </Checkbox>
-              <Checkbox colorScheme="green" defaultChecked>
+              <Checkbox colorScheme="green">
                 Exfoliators & Scrubs (417)
               </Checkbox>
-              <Checkbox colorScheme="green" defaultChecked>
+              <Checkbox colorScheme="green">
                 Masks (391)
               </Checkbox>
-              <Checkbox colorScheme="green" defaultChecked>
+              <Checkbox colorScheme="green">
                 Moisturizers (373)
               </Checkbox>
-              <Checkbox colorScheme="green" defaultChecked>
+              <Checkbox colorScheme="green">
                 Eye Care (353)
               </Checkbox>
-              <Checkbox colorScheme="green" defaultChecked>
+              <Checkbox colorScheme="green">
                 Toners (319)
               </Checkbox>
-              <Checkbox colorScheme="green" defaultChecked>
+              <Checkbox colorScheme="green">
                 Skincare Non-Electrical Tools (151)
               </Checkbox>
-              <Checkbox colorScheme="green" defaultChecked>
+              <Checkbox colorScheme="green">
                 Skincare Electrical Devices (122)
               </Checkbox>
-              <Checkbox colorScheme="green" defaultChecked>
+              <Checkbox colorScheme="green">
                 Neck & Décolletage (118)
               </Checkbox>
-              <Checkbox colorScheme="green" defaultChecked>
+              <Checkbox colorScheme="green">
                 Lip Care (109)
               </Checkbox>
-              <Checkbox colorScheme="green" defaultChecked>
+              <Checkbox colorScheme="green">
                 Peels (90)
               </Checkbox>
             </ul>
@@ -206,14 +207,16 @@ const ProductsPage = () => {
           }}
         >
           {prodData.map((items) => (
-            <ProductsCard
+            <Link to={`/products/${items.id}`}><ProductsCard
+              key={items.id}
               image={items.data_image}
               title={items.data_name}
               gift={items.data_gift}
               price={items.data_price}
-            />
+            /></Link>
           ))}
         </div>
+
       </div>
 
       <Pagination page={page} handlePrev={handlePrev} handleNext={handleNext}/>
