@@ -4,7 +4,7 @@ import "../../index.css"
 const ShopByCategory = () => {
   return (
     <div className="shop-by-category-image-response">
-      <p style={{fontSize:"30px", fontWeight:"500", margin:"1.5rem"}}>Shop by Category</p>
+      <p style={{fontSize:"30px", fontWeight:"500", margin:"1.5rem", marginLeft:"10rem"}}>Shop by Category</p>
       <div style={{ display: "flex", gap: "1rem", alignItems: "center", justifyContent:"center",}}>
         <img
           src="https://static.thcdn.com/images/small/webp/widgets/121-us/01/Page-001-025201.png"

@@ -1,7 +1,7 @@
 import { InputGroup, Stack, InputRightElement, Input } from "@chakra-ui/react";
 import { Search2Icon } from "@chakra-ui/icons";
 import React from "react";
-import "../index.css"
+import "../index.css";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
@@ -40,11 +40,13 @@ const Navbar = () => {
           padding: "20px",
         }}
       >
-        <Link to="/"><img
-          src="https://seeklogo.com/images/S/skinstore-logo-5281C41BD3-seeklogo.com.png"
-          alt="logo"
-          width={"200px"}
-        /></Link>
+        <Link to="/">
+          <img
+            src="https://seeklogo.com/images/S/skinstore-logo-5281C41BD3-seeklogo.com.png"
+            alt="logo"
+            width={"200px"}
+          />
+        </Link>
         <Stack>
           <InputGroup>
             <InputRightElement
@@ -63,14 +65,16 @@ const Navbar = () => {
           className="account-and-cart"
           style={{ display: "flex", gap: "4rem", fontSize: "17px" }}
         >
-          <p style={{ display: "flex", gap: "0.7rem" }}>
-            <img
-              src="https://cdn-icons-png.flaticon.com/512/747/747376.png"
-              alt="user"
-              width={"22px"}
-            />
-            Account
-          </p>
+          <Link to="/login" style={{textDecoration:"none"}}>
+            <p style={{ display: "flex", gap: "0.7rem" }}>
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/747/747376.png"
+                alt="user"
+                width={"22px"}
+              />
+              Account
+            </p>
+          </Link>
           <p style={{ display: "flex", gap: "0.7rem" }}>
             <img
               src="https://cdn-icons-png.flaticon.com/512/2089/2089433.png"
@@ -90,19 +94,21 @@ const Navbar = () => {
           justifyContent: "center",
         }}
       >
-        <p style={{padding:"10px"}}>Brands</p>
-        <p style={{padding:"10px"}}>Holiday</p>
-        <p style={{padding:"10px"}}>Sale</p>
-        <Link to="/products"><p style={{padding:"10px"}}>SkinCare</p></Link>
-        <p style={{padding:"10px"}}>Hair</p>
-        <p style={{padding:"10px"}}>Makeup</p>
-        <p style={{padding:"10px"}}>Bath&Body</p>
-        <p style={{padding:"10px"}}>Fragnace</p>
-        <p style={{padding:"10px"}}>Self-Care</p>
-        <p style={{padding:"10px"}}>Tools</p>
-        <p style={{padding:"10px"}}>New&Trending</p>
-        <p style={{padding:"10px"}}>Build a Routine</p>
-        <p style={{padding:"10px"}}>Blog</p>
+        <p style={{ padding: "10px" }}>Brands</p>
+        <p style={{ padding: "10px" }}>Holiday</p>
+        <p style={{ padding: "10px" }}>Sale</p>
+        <Link to="/products">
+          <p style={{ padding: "10px" }}>SkinCare</p>
+        </Link>
+        <p style={{ padding: "10px" }}>Hair</p>
+        <p style={{ padding: "10px" }}>Makeup</p>
+        <p style={{ padding: "10px" }}>Bath&Body</p>
+        <p style={{ padding: "10px" }}>Fragnace</p>
+        <p style={{ padding: "10px" }}>Self-Care</p>
+        <p style={{ padding: "10px" }}>Tools</p>
+        <p style={{ padding: "10px" }}>New&Trending</p>
+        <p style={{ padding: "10px" }}>Build a Routine</p>
+        <p style={{ padding: "10px" }}>Blog</p>
       </div>
     </div>
   );
