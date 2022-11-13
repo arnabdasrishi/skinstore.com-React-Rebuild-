@@ -6,6 +6,8 @@ import CategoryDiscount from "./Components/CategoryDiscount";
 import AllRoutes from "./Routes/AllRoutes";
 
 function App() {
+
+
   return (
     <div className="App">
       <Navbar />

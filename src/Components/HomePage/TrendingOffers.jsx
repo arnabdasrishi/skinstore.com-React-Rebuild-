@@ -5,7 +5,7 @@ import "../../index.css"
 const TrendingOffers = () => {
   return (
     <div className="trending-offers-image-response" style={{margin:"1rem"}}>
-      <p style={{ fontSize: "30px", fontWeight: "500" }}>Trending Offers</p>
+      <p style={{ fontSize: "30px", fontWeight: "500",marginLeft:"9rem", }}>Trending Offers</p>
       <div
         className="image-semi-details-with-button"
         style={{
