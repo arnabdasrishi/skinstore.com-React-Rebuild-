@@ -1,10 +1,23 @@
 import { InputGroup, Stack, InputRightElement, Input } from "@chakra-ui/react";
 import { Search2Icon } from "@chakra-ui/icons";
-import React from "react";
+import React, { useContext } from "react";
 import "../index.css";
 import { Link } from "react-router-dom";
+import { LoginData } from "../Contexts/LoginContext"
 
 const Navbar = () => {
+
+  const {loginContext} = useContext(LoginData)
+
+  let username = ""
+  for(let i=0; i<loginContext.length; i++) {
+    if(loginContext[i]==="@"){
+      break;
+    } else {
+      username+=loginContext[i];
+    }
+  }
+
   return (
     <div>
       <div
@@ -72,7 +85,7 @@ const Navbar = () => {
                 alt="user"
                 width={"22px"}
               />
-              Account
+              {username==="" ? "Login" : username}
             </p>
           </Link>
           <p style={{ display: "flex", gap: "0.7rem" }}>

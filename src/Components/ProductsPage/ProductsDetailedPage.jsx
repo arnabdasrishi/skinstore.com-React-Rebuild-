@@ -1,17 +1,37 @@
 import React, { useState, useEffect } from "react";
-import { Button } from "@chakra-ui/react";
+import { useDisclosure, Button } from "@chakra-ui/react";
 import "../../index.css";
 import { useParams } from "react-router-dom";
 import { Table } from "react-bootstrap";
+import {
+  Drawer,
+  DrawerBody,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerOverlay,
+  DrawerContent,
+  DrawerCloseButton,
+} from "@chakra-ui/react";
 
 const ProductsDetailedPage = () => {
+  const [noOfItems, setNoOfItems] = useState(1);
   const [data, setData] = useState([]);
   const params = useParams();
+
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const btnRef = React.useRef();
 
   function getDataById(id) {
     fetch(`https://api.npoint.io/b9af8c430a0e728be586/data/${id}`)
       .then((res) => res.json())
       .then((res) => setData(res));
+  }
+
+  function handleIncitems() {
+    setNoOfItems(noOfItems + 1);
+  }
+  function handleDecitems() {
+    setNoOfItems(noOfItems - 1);
   }
 
   useEffect(() => {
@@ -39,27 +59,115 @@ const ProductsDetailedPage = () => {
             width="130px"
           />
           <p style={{ color: "#d95274" }}>
-            <s>$ MSRP</s>
+            <s>MSRP {data.data_price}</s>
           </p>
           <p style={{ fontSize: "50px" }}>{data.data_price}</p>
+          <p style={{ color: "#1dab45", marginTop: "-20px", fontSize: "20px" }}>
+            You save $ {13.05}
+          </p>
           <p>Quantity</p>
+
           <div style={{ display: "flex", gap: "1rem" }}>
-            <Button colorScheme="teal" variant="outline">
+            <Button
+              colorScheme="teal"
+              variant="outline"
+              onClick={handleDecitems}
+              disabled={noOfItems === 1}
+            >
               -
             </Button>
-            <p style={{ fontSize: "20px" }}>1</p>
-            <Button colorScheme="teal" variant="outline">
+            <p style={{ fontSize: "20px" }}>{noOfItems}</p>
+            <Button
+              colorScheme="teal"
+              variant="outline"
+              onClick={handleIncitems}
+            >
               +
             </Button>
           </div>
-          <Button
+          {/* <Button
             colorScheme="pink"
             variant="solid"
             sx={{ marginBottom: "2rem", width: "100%", fontSize: "20px" }}
           >
             BUY NOW
-          </Button>
-          <p style={{ border: "2px solid #fc03e3", padding: "5px" }}>
+          </Button> */}
+
+          {/* Cart Drawer button comes from here on */}
+          <div className="cart-button-headache">
+            <Button
+              ref={btnRef}
+              colorScheme="pink"
+              onClick={onOpen}
+              sx={{ marginBottom: "2rem", width: "100%", fontSize: "20px" }}
+            >
+              BUY NOW
+            </Button>
+            <Drawer
+              isOpen={isOpen}
+              placement="right"
+              onClose={onClose}
+              finalFocusRef={btnRef}
+            >
+              <DrawerOverlay />
+              <DrawerContent>
+                <DrawerCloseButton />
+                <DrawerHeader>Your Cart Total</DrawerHeader>
+
+                {/* <DrawerBody>
+            <Input placeholder="Type here..." />
+          </DrawerBody> */}
+
+                <DrawerBody>
+                  <div>
+                    <div style={{ display: "flex", gap: "1.5rem" }}>
+                      <img
+                        src={data.data_image}
+                        style={{ width: "50px" }}
+                        alt=""
+                      />
+                      <p>
+                        <b>{data.data_name}</b>
+                      </p>
+                    </div>
+                    <p style={{color:"green",textAlign:"right",marginTop:"-2rem"}}>
+                      <big><b>{data.data_price}</b></big>
+                    </p>
+                  </div>
+                  <div
+                    style={{
+                      display: "flex",
+                      gap: "1rem",
+                      alignItems: "center",
+                      justifyContent: "center",
+                    }}
+                  >
+                    <Button colorScheme="teal" variant="outline" onClick={handleDecitems}>
+                      -
+                    </Button>
+                    <p>{noOfItems}</p>
+                    <Button colorScheme="teal" variant="outline" onClick={handleIncitems}>
+                      +
+                    </Button>
+                  </div>
+                </DrawerBody>
+
+                <DrawerFooter>
+                  <Button variant="outline" mr={3} onClick={onClose}>
+                    Go back
+                  </Button>
+                  <Button colorScheme="yellow">Checkout </Button>
+                </DrawerFooter>
+              </DrawerContent>
+            </Drawer>
+          </div>
+          <p
+            style={{
+              border: "2px solid #fc03e3",
+              padding: "5px",
+              textAlign: "center",
+            }}
+          >
             {data.data_gift}
           </p>
         </div>
